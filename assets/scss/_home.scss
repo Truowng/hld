@@ -1,0 +1,32 @@
+.top-project {
+  margin-top: 20px;
+  .project-item {
+    height: 250px;
+    margin-bottom: 3px;
+    transition: all $cubic 0.75s;
+    img {
+      height: 100%;
+      object-fit: cover;
+      transition: all ease 0.75s;
+      filter: grayscale(1);
+    }
+    &:hover {
+      height: 600px;
+      img {
+        filter: unset;
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+
+@include landscape-phone {
+  .top-project {
+    .project-item {
+      &:hover {
+        height: 250px;
+      }
+    }
+  }
+}

@@ -16,6 +16,7 @@ body {
   color: $white;
   line-height: 1.5;
   background: $dark-gray;
+  letter-spacing: 0.05em;
 }
 
 img,
@@ -46,6 +47,12 @@ h6 {
   padding: 0;
 }
 
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
 header {
   .header-wrapper {
     @include flex(space-between, end, 30px);
@@ -57,33 +64,56 @@ header {
   }
 
   .header-nav {
-    @include flex(unset, unset, 20px);
+    @include flex(unset, unset, 30px);
     flex-direction: column;
+  }
+
+  .close-btn {
+    display: none;
+    width: 30px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+
+  .menu-btn {
+    display: none;
+    min-width: 30px;
+    width: 30px;
   }
 
   .social-list {
     @include flex(end, center, 15px);
     .social-item {
       .icon {
+        display: inline-block;
         width: 30px;
         aspect-ratio: 1;
+        transition: all ease 0.3s;
+        &:hover {
+          transform: scale(1.2);
+        }
       }
     }
   }
+
   .nav-list {
-    @include flex(space-between, center, 20px);
+    @include flex(space-between, center, 40px);
     .nav-item {
       a {
         text-transform: uppercase;
         position: relative;
+        font-weight: $fw-l;
+        display: block;
         &::before {
+          content: "";
           position: absolute;
-          bottom: -10px;
+          bottom: 0px;
           left: 0;
-          width: 0%;
           height: 1px;
+          width: 0%;
           background-color: $white;
-          transition: $cubic all 0.75;
+          transition: all $cubic 0.75s;
         }
         &:hover {
           &::before {
@@ -91,6 +121,54 @@ header {
           }
         }
       }
+    }
+  }
+}
+
+// RESPONSIVE
+
+@include landscape-phone {
+  header {
+    .header-wrapper {
+      align-items: center;
+    }
+    .header-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background-color: $dark-gray;
+      flex-direction: column-reverse;
+      justify-content: center;
+      transform: translateY(-100%);
+      transition: all $cubic 1s;
+      &.active {
+        transform: unset;
+      }
+    }
+    .nav-list {
+      flex-direction: column;
+      .nav-item {
+        a {
+          font-size: 20px;
+          font-weight: $fw-el;
+        }
+      }
+    }
+    .social-list {
+      justify-content: center;
+      padding-top: 40px;
+      margin: 0 auto;
+      border-top: 1px solid $white;
+      width: fit-content;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .close-btn {
+      display: block;
     }
   }
 }
