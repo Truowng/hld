@@ -125,6 +125,19 @@ header {
   }
 }
 
+.banner {
+  height: 500px;
+  margin-top: 20px;
+  .banner-image {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 // RESPONSIVE
 
 @include landscape-phone {

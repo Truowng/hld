@@ -124,6 +124,20 @@ header .nav-list .nav-item a:hover::before {
   width: 100%;
 }
 
+.banner {
+  height: 500px;
+  margin-top: 20px;
+}
+.banner .banner-image {
+  height: 100%;
+  width: 100%;
+}
+.banner .banner-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media only screen and (max-width: 767px) {
   header .header-wrapper {
     align-items: center;
@@ -192,4 +206,32 @@ header .nav-list .nav-item a:hover::before {
   .top-project .project-item:hover {
     height: 250px;
   }
+}
+.about {
+  margin-top: 3px;
+}
+.about .about-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+}
+.about .about-image {
+  aspect-ratio: 1.5;
+  overflow: hidden;
+}
+.about .about-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .about-content {
+  padding: 30px;
+  grid-area: 1/1/span 2/1;
+}
+.about .about-content .text {
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 200;
+  margin-bottom: 20px;
 }
