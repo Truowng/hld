@@ -186,6 +186,9 @@ header .nav-list .nav-item a:hover::before {
 .top-project {
   margin-top: 20px;
 }
+.top-project .project-list {
+  margin-top: 0;
+}
 .top-project .project-item {
   height: 250px;
   margin-bottom: 3px;
@@ -270,7 +273,55 @@ header .nav-list .nav-item a:hover::before {
   }
 }
 .project-list {
-  margin-top: 20px;
+  margin-top: 30px;
+}
+.project-list .project-list-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-wrap: wrap;
+  margin: 0 auto 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  row-gap: 15px;
+}
+.project-list .project-list-tab .tab-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  min-width: 200px;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex: 0 0 24%;
+}
+.project-list .project-list-tab .tab-item .icon {
+  font-size: 20px;
+  text-align: center;
+  color: #f4ce14;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+.project-list .project-list-tab .tab-item .text {
+  font-size: 16px;
+  font-weight: 200;
+  text-transform: capitalize;
+  transition: all ease 0.3s;
+  opacity: 0.5;
+}
+.project-list .project-list-tab .tab-item.active .icon {
+  opacity: 1;
+}
+.project-list .project-list-tab .tab-item.active .text {
+  font-weight: 400;
+  opacity: 1;
+}
+.project-list .project-list-tab .tab-item:hover:not(.active) .icon {
+  color: #fff;
+  opacity: 0.5;
 }
 .project-list .project-list-group {
   display: grid;
@@ -281,6 +332,7 @@ header .nav-list .nav-item a:hover::before {
 .project-list .project-list-item {
   position: relative;
   display: block;
+  height: 350px;
 }
 .project-list .project-list-item::before {
   content: "";
@@ -349,6 +401,12 @@ header .nav-list .nav-item a:hover::before {
   }
 }
 @media only screen and (max-width: 576px) {
+  .project-list .project-list-tab .tab-item {
+    min-width: 120px;
+  }
+  .project-list .project-list-item {
+    height: 300px;
+  }
   .project-list .project-list-item .content {
     left: 15px;
     bottom: 15px;
@@ -358,5 +416,10 @@ header .nav-list .nav-item a:hover::before {
   }
   .project-list .project-list-item .content .city {
     font-size: 12px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .project-list .project-list-tab {
+    width: 100%;
   }
 }

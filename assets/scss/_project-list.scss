@@ -1,5 +1,51 @@
 .project-list {
-  margin-top: 20px;
+  margin-top: 30px;
+  .project-list-tab {
+    @include flex(center, center, 1px);
+    width: fit-content;
+    flex-wrap: wrap;
+    margin: 0 auto 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba($color: $white, $alpha: 0.08);
+    row-gap: 15px;
+    .tab-item {
+      @include flex(center, center, 5px);
+      min-width: 200px;
+      width: fit-content;
+      flex: 0 0 24%;
+      .icon {
+        font-size: 20px;
+        text-align: center;
+        color: #f4ce14;
+        opacity: 0;
+        transition: all ease 0.5s;
+      }
+      .text {
+        font-size: 16px;
+        font-weight: $fw-el;
+        text-transform: capitalize;
+        transition: all ease 0.3s;
+        opacity: 0.5;
+      }
+      &.active {
+        .icon {
+          opacity: 1;
+        }
+        .text {
+          font-weight: $fw-r;
+          opacity: 1;
+        }
+      }
+      &:hover {
+        &:not(.active) {
+          .icon {
+            color: $white;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
   .project-list-group {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -9,6 +55,7 @@
   .project-list-item {
     position: relative;
     display: block;
+    height: 350px;
     &::before {
       content: "";
       position: absolute;
@@ -86,17 +133,19 @@
       .content {
         opacity: 1;
       }
-      .image {
-        img {
-        }
-      }
     }
   }
 }
 
 @include extra-mobile {
   .project-list {
+    .project-list-tab {
+      .tab-item {
+        min-width: 120px;
+      }
+    }
     .project-list-item {
+      height: 300px;
       .content {
         left: 15px;
         bottom: 15px;
@@ -107,6 +156,14 @@
           font-size: 12px;
         }
       }
+    }
+  }
+}
+
+@include mobile {
+  .project-list {
+    .project-list-tab {
+      width: 100%;
     }
   }
 }
