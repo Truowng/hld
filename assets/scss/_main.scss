@@ -138,6 +138,45 @@ header {
   }
 }
 
+.pagination {
+  @include flex(space-between, center, 20px);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  button {
+    font-size: 30px;
+    color: $white;
+    width: 60px;
+    height: 60px;
+    @include flex(center, center, unset);
+    transition: all ease 0.3s;
+    font-weight: $fw-t;
+    &:hover {
+      background: rgba($color: $white, $alpha: 0.1);
+    }
+  }
+  .page-wrapper {
+    @include flex(center, center, 5px);
+  }
+
+  .page,
+  .etc {
+    font-size: 16px;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    @include flex(center, center, unset);
+    transition: all ease 0.3s;
+    font-weight: $fw-el;
+  }
+
+  .page {
+    &.active,
+    &:hover {
+      background-color: rgba($color: $white, $alpha: 0.1);
+    }
+  }
+}
+
 // RESPONSIVE
 
 @include landscape-phone {
@@ -187,5 +226,19 @@ header {
 
   .banner {
     height: 350px;
+  }
+}
+
+@include mobile {
+  .pagination {
+    .page-wrapper {
+      gap: 0px;
+    }
+    .page,
+    .etc {
+      font-size: 14px;
+      width: 30px;
+      height: 30px;
+    }
   }
 }
