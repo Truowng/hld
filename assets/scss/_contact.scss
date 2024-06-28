@@ -1,0 +1,138 @@
+.contact {
+  margin-top: 40px;
+  .contact-info {
+    padding-top: 40px;
+    border-top: 1px solid rgba($color: $white, $alpha: 0.2);
+    margin-bottom: 150px;
+    .title {
+      font-size: 70px;
+      font-weight: $fw-m;
+      letter-spacing: 0px;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+    .info-item {
+      font-size: 14px;
+      font-weight: $fw-el;
+      margin-bottom: 15px;
+      a {
+        transition: all ease 0.3s;
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+  }
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 100px;
+  }
+
+  .contact-image {
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      filter: grayscale(1);
+    }
+  }
+
+  .contact-form {
+    margin-top: 100px;
+    width: 80%;
+    .title {
+      font-size: 50px;
+      font-weight: $fw-t;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 60px;
+    }
+    .input-wrapper {
+      margin-bottom: 50px;
+      label {
+        font-size: 14px;
+        font-weight: $fw-r;
+        text-transform: capitalize;
+        display: block;
+        margin-bottom: 10px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        outline: none;
+        background: transparent;
+        color: $white;
+        font-size: 14px;
+        font-weight: $fw-l;
+        letter-spacing: 0.05em;
+        border: none;
+        border-bottom: 1px solid rgba($color: $white, $alpha: 0.2);
+        transition: all ease 0.3s;
+        resize: none;
+        padding-bottom: 8px;
+        &:focus {
+          border-color: $white;
+        }
+      }
+    }
+    .submit-btn {
+      padding: 15px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: $fw-el;
+      text-transform: uppercase;
+      color: $white;
+      background-color: #252525;
+      letter-spacing: 0.05em;
+      transition: all ease 0.3s;
+      &:hover {
+        background-color: #333333;
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+
+@include desktop {
+  .contact {
+    .contact-info {
+      margin-bottom: 100px;
+    }
+    .contact-image {
+      display: none;
+    }
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+      margin-top: 0;
+      width: 100%;
+      .title {
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@include extra-mobile {
+  .contact {
+    .contact-info {
+      margin-bottom: 80px;
+      .container {
+        margin: 0;
+        padding: 0;
+      }
+      .title {
+        font-size: 40px;
+      }
+    }
+    .contact-form {
+      .title {
+        font-size: 25px;
+      }
+    }
+  }
+}
