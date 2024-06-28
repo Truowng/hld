@@ -1,0 +1,140 @@
+.project-detail {
+  margin-top: 40px;
+  .project-detail-wrapper {
+    @include flex(unset, start, 20px);
+  }
+  .project-detail-slider {
+    width: 65%;
+  }
+
+  .slider-btn {
+    @include flex(space-between, center, unset);
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transform: translateY(-50%);
+    .btn {
+      font-size: 60px;
+      color: $white;
+      font-weight: $fw-t;
+      opacity: 0;
+      transition: all ease 0.3s;
+      border: none;
+    }
+  }
+
+  .swiper-main {
+    height: 70vh;
+    &:hover {
+      .slider-btn {
+        .btn {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .swiper-thumbs {
+    margin-top: 5px;
+    .swiper-slide {
+      opacity: 0.3;
+      transition: all ease 0.5s;
+      &-thumb-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper-slide {
+    height: initial;
+  }
+
+  .project-detail-image {
+    height: 100%;
+    overflow: hidden;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .project-thumb-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    img {
+      height: 100%;
+      object-fit: cover;
+      transition: all ease 0.3s;
+    }
+  }
+
+  .project-detail-content {
+    width: 35%;
+    .badge {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: $fw-el;
+      letter-spacing: 0.5em;
+      text-align: left;
+      //   margin-bottom: 5px;
+    }
+    .title {
+      font-size: 40px;
+      font-weight: $fw-sb;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 12px;
+      font-weight: $fw-el;
+      margin-bottom: 5px;
+      line-height: 1.7;
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+// RESPONSIVE
+
+@include tablet {
+  .project-detail {
+    .project-detail-wrapper {
+      flex-direction: column;
+    }
+    .project-detail-slider {
+      width: 100%;
+      .swiper-main {
+        aspect-ratio: 5/3;
+        height: initial;
+      }
+    }
+    .project-detail-content {
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+}
+
+@include extra-mobile {
+  .project-detail {
+    .project-detail-slider {
+      .slider-btn {
+        display: none;
+      }
+    }
+    .project-detail-content {
+      margin-top: 10px;
+      .badge {
+        font-size: 10px;
+      }
+      .title {
+        font-size: 30px;
+      }
+    }
+  }
+}
