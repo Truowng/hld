@@ -70,6 +70,8 @@
         transition: all ease 0.3s;
         resize: none;
         padding-bottom: 8px;
+        box-shadow: none;
+        border-radius: 0;
         &:focus {
           border-color: $white;
         }
