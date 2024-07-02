@@ -576,6 +576,8 @@ header .nav-list .nav-item a:hover::before {
   font-weight: 200;
   letter-spacing: 0.5em;
   text-align: left;
+  margin-bottom: 5px;
+  padding: 0;
 }
 .project-detail .project-detail-content .title {
   font-size: 40px;
@@ -584,7 +586,7 @@ header .nav-list .nav-item a:hover::before {
   margin-bottom: 20px;
 }
 .project-detail .project-detail-content p {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 200;
   margin-bottom: 5px;
   line-height: 1.7;

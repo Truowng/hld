@@ -80,7 +80,8 @@
       font-weight: $fw-el;
       letter-spacing: 0.5em;
       text-align: left;
-      //   margin-bottom: 5px;
+      margin-bottom: 5px;
+      padding: 0;
     }
     .title {
       font-size: 40px;
@@ -89,7 +90,7 @@
       margin-bottom: 20px;
     }
     p {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: $fw-el;
       margin-bottom: 5px;
       line-height: 1.7;
