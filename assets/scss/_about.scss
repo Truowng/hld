@@ -16,6 +16,10 @@
       filter: grayscale(1);
       transition: all ease 0.75s;
     }
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
     &:hover {
       video,
       img {
