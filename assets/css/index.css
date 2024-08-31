@@ -234,9 +234,6 @@ header .nav-list .nav-item a:hover::before {
   header .close-btn {
     display: block;
   }
-  .banner {
-    height: 350px;
-  }
 }
 @media only screen and (max-width: 480px) {
   .pagination .page-wrapper {
